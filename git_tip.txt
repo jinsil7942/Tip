@@ -53,7 +53,8 @@ git push origin dev(원격) /or/ git push --set-upstream origin dev(원격)
 
 git push origin sangwonl
 
---  리모트의 브랜치 정보 확인후 브랜치 작업영역(로컬 or Bas) 로 가져오기 
+--  리모트의 브랜치 정보 확인후 브랜치 작업영역(로컬 or Bas) 로 가져오기
+$ git remote update 
 $ git fetch origin
 $ git branch
 * master
