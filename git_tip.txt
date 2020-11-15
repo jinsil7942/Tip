@@ -19,6 +19,10 @@ git merge dfocus-da
 git checkout remotes/origin/dfocus-dev -b dfoucs-dev
 
 git pull requst 사용법 확인해야함
+
+--push 이후 git hub에 접속하면 pull requst 활성화된다.
+master에 merge 요청을 하는것이다. 그럼 담당자가 확인후 merge한다...
+
 https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/
 
 -- 현재 상태 
