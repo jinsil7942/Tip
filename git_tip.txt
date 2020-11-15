@@ -1,0 +1,87 @@
+
+-- 현재 상태 
+git status <--프로젝트 폴더의 상태
+
+########### 리모트 
+-- 현재 리모트 확인
+git remote -v
+
+-- 리모트 삭제
+git remote remove orign 
+
+-- 리모트 추가 
+git remote add origin https://github.com/ChoJinKyu/sppCapV2.git
+
+예)
+git remote add origin "http://1"
+git remote set-url --add --push origin "http://1"
+git remote set-url --add --push origin "http://2"
+
+-- 리모트 변경
+git remote remove origin 
+git remote add origin https://github.com/ChoJinKyu/sppCapV2.git
+
+########### 계정
+
+-- 계정 저장
+git config credential.helper store
+
+-- 계정 등록
+git config --global user.email "pangsezi@gmail.com"
+git config --global user.name "neo"
+
+
+########### 브랜치
+-- 리포트 갱신 
+git remote update 
+
+-- 원격 포함 브랜치 정보 확인
+gir branch -a
+
+-- 브랜치 생성 (생성 깃허브에서 작업 더 편함)
+git checkout -b testBranch
+
+-- 브랜치 삭제
+git branch -D testBranch
+
+-- 브랜치에서 마스터 값을 가져올때.
+git checkout master
+git merge sangwonl   # sangwonl 브랜치의 HEAD를 현재 브랜치
+
+-- 브랜치에서 작업후 브랜치에 반영하고자 할때(branch push)
+git push origin dev(원격) /or/ git push --set-upstream origin dev(원격)
+
+git push origin sangwonl
+
+--  리모트의 브랜치 정보 확인후 브랜치 작업영역(로컬 or Bas) 로 가져오기 
+$ git fetch origin
+$ git branch
+* master
+$ git branch -a
+* master
+  remotes/origin/master
+  remotes/origin/txt <---가져올 브랜치 
+
+$ git checkout remotes/origin/txt -b txt    --리모트 브랜치를 로컬 txt 브랜치로 생성 
+$ git branch
+  master
+* txt   <--현재 브랜치 및 내역 확인 
+
+--  내 로컬 브랜치 지우기
+$ git branch
+* master
+txt
+$ git branch -d txt
+$ git branch
+* master
+
+-- 리모트 브랜치 지우기 
+$ git branch -a
+* master
+  remotes/origin/master
+  remotes/origin/txt
+$ git push origin :txt
+$ git branch
+* master
+  remotes/origin/master
+$ git branch -d origin/txt -r   # 혹은 이렇게
