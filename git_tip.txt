@@ -85,3 +85,25 @@ $ git branch
 * master
   remotes/origin/master
 $ git branch -d origin/txt -r   # 혹은 이렇게
+
+
+####################### git log
+
+git log -p // 버젼별 변경사항을 볼수 있다.
+git diff '버전 id'..'버전 id2'
+
+--버전 번호를 선택 확인하면 해당 버전의 하위로만 볼수 있다.
+git log b3a8cbf4612c18605224209042d6e27111afb9a4
+
+
+####################### 복구
+Reset vs revert   !!!!!!!!!!!!!!!!!!!!!!!!!!!
+다시 복구 할 수 있다. 공유이후 reset를 하면 안됨.
+
+--reset 하지 마라 예제만..
+git reset --hard "버전 id" 
+
+git reset --hard "5ea3231044f457c10306506b974353ff63fa6ce0" (잘못하면 git 커밋 기록 모두 지운다. )
+
+####################### 기타 
+ git commit --amend //git 저장 메시지를 다시 정한다. 
