@@ -1,3 +1,18 @@
+##많이 사용하는명령어
+
+--마스터 내용 merge
+git merge master
+
+--마스터 내용 가져오기 
+git pull origin dfocus-dev
+git pull origin dfocus-qa
+
+git push origin dfocus-dev
+git push origin dfocus-da
+
+--마스터에서 브랜치 머지하기 (담당자만 사용)
+git merge dfocus-dev
+git merge dfocus-da
 
 -- 현재 상태 
 git status <--프로젝트 폴더의 상태
@@ -63,7 +78,7 @@ $ git branch -a
   remotes/origin/master
   remotes/origin/txt <---가져올 브랜치 
 
-$ git checkout remotes/origin/txt -b txt    --리모트 브랜치를 로컬 txt 브랜치로 생성 
+$ git checkout remotes/origin/dfocus -b dfocus    --리모트 브랜치를 로컬 txt 브랜치로 생성 
 $ git branch
   master
 * txt   <--현재 브랜치 및 내역 확인 
@@ -72,7 +87,7 @@ $ git branch
 $ git branch
 * master
 txt
-$ git branch -d txt
+$ git branch -D txt
 $ git branch
 * master
 
