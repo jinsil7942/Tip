@@ -7,12 +7,19 @@ git merge master
 git pull origin dfocus-dev
 git pull origin dfocus-qa
 
+-- 브랜치 push
 git push origin dfocus-dev
 git push origin dfocus-da
 
 --마스터에서 브랜치 머지하기 (담당자만 사용)
 git merge dfocus-dev
 git merge dfocus-da
+
+--리모트 브랜치 로컬로 가져오기
+git checkout remotes/origin/dfocus-dev -b dfoucs-dev
+
+git pull requst 사용법 확인해야함
+https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/
 
 -- 현재 상태 
 git status <--프로젝트 폴더의 상태
