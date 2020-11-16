@@ -1,9 +1,10 @@
 ##많이 사용하는명령어
 
 --마스터 내용 merge
+git checkout mybranch
 git merge master
 
---마스터 내용 가져오기 
+--리모트 에서 브랜치 내용 가져오기 
 git pull origin dfocus-dev
 git pull origin dfocus-qa
 
@@ -12,13 +13,16 @@ git push origin dfocus-dev
 git push origin dfocus-da
 
 --마스터에서 브랜치 머지하기 (담당자만 사용)
+git checkout master
 git merge dfocus-dev
 git merge dfocus-da
 
---리모트 브랜치 로컬로 가져오기
+--리모트 브랜치 로컬에 브랜치 생성과 동시에 가져오기
 git checkout remotes/origin/dfocus-dev -b dfoucs-dev
 
-git pull requst 사용법 확인해야함
+
+마스터에 병합하거나 개인적인 작업이후 진행 
+- git pull requst 사용법 확인해야함
 
 --push 이후 git hub에 접속하면 pull requst 활성화된다.
 
@@ -50,7 +54,7 @@ git remote -v
 git remote remove orign 
 
 -- 리모트 추가 
-git remote add origin https://github.com/ChoJinKyu/sppCapV2.git
+git remote add origin https://github.com/ChoJinKyu/sppCapV.git
 
 예)
 git remote add origin "http://1"
