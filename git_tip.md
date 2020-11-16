@@ -1,13 +1,13 @@
 # GIT 사용 TIP
 
-## 자주 사용하는 명령어
+### 자주 사용하는 명령어
 
-# 마스터 내용 merge
+#### 마스터 내용 merge
 
 git checkout mybranch
 git merge master
 
-# 리모트 에서 브랜치 내용 가져오기 
+#### 리모트 에서 브랜치 내용 가져오기 
 
 git pull origin dfocus-dev
 git pull origin dfocus-qa
