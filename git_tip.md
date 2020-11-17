@@ -13,6 +13,14 @@
 
     git pull origin dfocus-qa
 
+### 리포트 정보 업데이트 
+
+    git remote update
+
+### 로컬 브랜치 생성->커밋-> 리모트 에 올리기(브랜치 신규 새성)
+
+    git push origin <브랜치명>
+
 ### 리모트 브랜치 로 push
 
     git push origin dfocus-dev
