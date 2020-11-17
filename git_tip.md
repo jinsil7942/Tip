@@ -4,41 +4,58 @@
 ### 마스터 내용 merge
 
 git checkout mybranch
+
 git merge master
 
 ### 리모트 에서 브랜치 내용 가져오기 
 
 git pull origin dfocus-dev
+
 git pull origin dfocus-qa
 
 ### 리모트 브랜치 로 push
 
 git push origin dfocus-dev
+
 git push origin dfocus-da
 
 ### 마스터에서 브랜치 머지하기 (담당자만 사용)
 
 git checkout master
+
 git merge dfocus-dev
+
 git merge dfocus-da
 
 ### 리모트 브랜치 로컬에 브랜치 생성과 동시에 생성
 
 git checkout remotes/origin/dfocus-dev -b dfoucs-dev
 
+
 -- 현재 상태 
 git status <--프로젝트 폴더의 상태
-코드리뷰, Merge Pull Reqest
-PR을 받은 원본 저장소 관리자는 코드 변경내역을 확인하고 Merge 여부를 결정한다.
--- Merge 이후 동기화 및 branch 삭제
-원본 저장소에 Merge가 완료되면 로컬 코드와 원본 저장소의 코드를 동기화 한다.
+
+  코드리뷰, Merge Pull Reqest
+
+    PR을 받은 원본 저장소 관리자는 코드 변경내역을 확인하고 Merge 여부를 결정한다.
+
+  Merge 이후 동기화 및 branch 삭제
+
+    원본 저장소에 Merge가 완료되면 로컬 코드와 원본 저장소의 코드를 동기화 한다.
+
 작업하던 로컬의 branch를 삭제한다.
---코드 동기화
-$ git pull real-blog(remote 별명)
---브랜치 삭제
-$ git branch -d develop(브랜치 별명)
---나중에 추가로 작업할 일이 있으면 git pull real-blog(remote 별명) 
-명령을 통해 원본 저장소와 동기화를 진행하고 3~7을 반복한다.
+
+  코드 동기화
+  
+    git pull real-blog(remote 별명)
+
+  브랜치 삭제
+  
+    git branch -d develop(브랜치 별명)
+
+  나중에 추가로 작업할 일이 있으면 git pull real-blog(remote 별명) 
+    
+  명령을 통해 원본 저장소와 동기화를 진행하고 3~7을 반복한다.
 
 ### 현재 리모트 확인 
 
@@ -55,11 +72,15 @@ git remote add origin https://github.com/ChoJinKyu/sppCapV.git
 #### 예)
 
 git remote add origin "http://1"
+
 git remote set-url --add --push origin "http://1"
+
 git remote set-url --add --push origin "http://2"
 
 ### 리모트 변경
+
 git remote remove origin 
+
 git remote add origin https://github.com/ChoJinKyu/sppCapV2.git
 
 
@@ -67,10 +88,13 @@ git remote add origin https://github.com/ChoJinKyu/sppCapV2.git
 # 계정
 
 ### 계정 저장
+
 git config credential.helper store
 
 ### 계정 등록
+
 git config --global user.email "pangsezi@gmail.com"
+
 git config --global user.name "neo"
 
 
@@ -78,7 +102,7 @@ git config --global user.name "neo"
 
 ### 리포트 갱신 
 
-git remote update 
+  git remote update 
 
 ### 원격 포함 브랜치 정보 확인
 
