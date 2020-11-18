@@ -26,7 +26,7 @@
                   </smartFilterBar:SmartFilterBar>
                   
 # Sapui5 Samrt Table               
-<smartTable:SmartTable
+              <smartTable:SmartTable
                     height="100%"
                     id="LineItemsSmartTable"
                     entitySet="MIMaterialCodeList"  //entitySet
