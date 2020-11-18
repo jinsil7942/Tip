@@ -31,10 +31,18 @@
                                           entitySet="MonitoringMasterView_02" persistencyKey="UniqueAndStablePersistencyKey" enableBasicSearch="false">
                                             <smartFilterBar:controlConfiguration>
                                                 <!-- 회사 -->
-                                                <smartFilterBar:ControlConfiguration key="tenant_id" index="1" label="회사" groupId="_BASIC" 
-                                                visibleInAdvancedArea="true">
+                                                <smartFilterBar:ControlConfiguration 
+                                                key="tenant_id" //컬럼
+                                                index="1"  //검색순서
+                                                label="회사" //라벨
+                                                groupId="_BASIC" //필터 설정시 기본값
+                                                visibleInAdvancedArea="true" //페이지 표시여부
+                                                >
                                                     <smartFilterBar:customControl>
-                                                          <ComboBox id="company_combo" items="{/OrgTenantView}" change="onChangeCombo">
+                                                          <ComboBox 
+                                                          id="company_combo" //오브젝트 아이디
+                                                          items="{/OrgTenantView}"  //items EntitySet
+                                                          change="onChangeCombo"> //변경 이벤트
                                                             <core:Item key="{tenant_id}" text="{tenant_name}"/>
                                                         </ComboBox>
                                                     </smartFilterBar:customControl>
