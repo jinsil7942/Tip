@@ -3,6 +3,51 @@
 
 ### <Table id="midTable" mode="MultiSelect" width="100%" sticky="HeaderToolbar,ColumnHeaders">
 
+
+##  dataSources 
+
+    "dataSources": {
+        "odata": {
+            "uri": "tempData.json",
+            "type": "JSON"
+        }
+      }   
+    
+## model
+    "models": {    
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "odata"
+      }     
+    },
+    
+## json Sample
+
+        {
+          "Material": [  
+            {
+              "Language": "English",
+              "Name": "철광석 1",
+              "LanguageKey": "EN"
+            },
+            {
+              "Language": "Korean",
+              "Name": "철광석 2",
+              "LanguageKey": "KO"
+            },
+            {
+              "Language": "English",
+              "Name": "철광석 3",
+              "LanguageKey": "EN"
+            },
+            {
+              "Language": "Korean",
+              "Name": "철광석 4",
+              "LanguageKey": "KO"
+            }
+            ]
+        }
+    
 ## 신규행 추가  (json)          
                 /**
                      * 
