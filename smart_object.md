@@ -24,7 +24,7 @@
                   >
                       <smartFilterBar:controlConfiguration>
                           <smartFilterBar:ControlConfiguration 
-                          key="mi_material_code_text"  //필터로 사용하 컬럼
+                          key="mi_material_code_text"  //`필터로 사용할 컬럼`
                           visibleInAdvancedArea="true" //true로 설정되어야 테이블 필터가 스마트 필터로 연동됨 
                           >
                           <!-- 기본값 설정 -- >
