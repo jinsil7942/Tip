@@ -43,6 +43,8 @@
                   </smartFilterBar:SmartFilterBar>
                   
 # Sapui5 Samrt customControl
+
+
                           <!-- Smart Filter -->
                                       	<smartFilterBar:SmartFilterBar id="smartFilterBar" smartVariant="__SVM01" useToolbar="true" 
                                           entitySet="MonitoringMasterView_02" persistencyKey="UniqueAndStablePersistencyKey" enableBasicSearch="false">
@@ -96,6 +98,7 @@
 
 
 # Sapui5 Samrt Table               
+
               <smartTable:SmartTable
                     height="100%"
                     id="LineItemsSmartTable"
@@ -107,6 +110,7 @@
                     beforeExport=".onBeforeExport"
                     useVariantManagement="true"
                     useTablePersonalisation="true"
+		    beforeRebindTable="onBeforeRebindTable"  //custom filter 검색을 실행하는데 필수
                     showTablePersonalisation="false"
 		    editTogglable="false" //true로 설정하면 컬럼을 수정하는 화면으로 전환됨
                     header="List"
@@ -146,3 +150,43 @@
                         </OverflowToolbar>
                     </smartTable:customToolbar>
                 </smartTable:SmartTable>
+		
+		
+
+## beforeRebindTable[스마트필터 커스텀과 연동]
+                
+		onBeforeRebindTable: function (oEvent) {
+			console.group("onBeforeRebindTable");
+			var mBindingParams = oEvent.getParameter("bindingParams");
+			var oSmtFilter = this.getView().byId("smartFilterBar");             //smart filter
+			
+			//combobox value
+			var oMi_material_code = oSmtFilter.getControlByKey("mi_material_code").getValue();     
+			var oMi_material_code_text = oSmtFilter.getControlByKey("mi_material_code_text").getValue();               
+			var oCategory_code = oSmtFilter.getControlByKey("category_code").getValue();   
+			var oCode = oSmtFilter.getControlByKey("code").getValue();   
+
+			if (oMi_material_code.length > 0) {
+				var oMi_material_codeFilter = new Filter("mi_material_code", FilterOperator.EQ, oMi_material_code_text);
+				mBindingParams.filters.push(oMi_material_codeFilter);
+			}
+
+			if (oMi_material_code_text.length > 0) {
+				var oMi_material_code_textFilter = new Filter("mi_material_code_text", FilterOperator.EQ, oMi_material_code_text);
+				mBindingParams.filters.push(oMi_material_code_textFilter);
+			}
+
+			if (oCategory_code.length > 0) {
+				var oCategory_codeFilter = new Filter("category_code", FilterOperator.EQ, oCategory_code);
+				mBindingParams.filters.push(oCategory_codeFilter);
+			}
+			
+			if (oCode.length > 0) {
+				var oCodeFilter = new Filter("code", FilterOperator.EQ, oCode);
+				mBindingParams.filters.push(oCodeFilter);
+			}  
+			console.groupEnd();              
+		},
+
+
+		
