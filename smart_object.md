@@ -25,6 +25,51 @@
                       </smartFilterBar:layoutData>
                   </smartFilterBar:SmartFilterBar>
                   
+# Sapui5 Samrt customControl
+                          <!-- Smart Filter -->
+                                      	<smartFilterBar:SmartFilterBar id="smartFilterBar" smartVariant="__SVM01" useToolbar="true" 
+                                          entitySet="MonitoringMasterView_02" persistencyKey="UniqueAndStablePersistencyKey" enableBasicSearch="false">
+                                            <smartFilterBar:controlConfiguration>
+                                                <!-- 회사 -->
+                                                <smartFilterBar:ControlConfiguration key="tenant_id" index="1" label="회사" groupId="_BASIC" 
+                                                visibleInAdvancedArea="true">
+                                                    <smartFilterBar:customControl>
+                                                          <ComboBox id="company_combo" items="{/OrgTenantView}" change="onChangeCombo">
+                                                            <core:Item key="{tenant_id}" text="{tenant_name}"/>
+                                                        </ComboBox>
+                                                    </smartFilterBar:customControl>
+                                                </smartFilterBar:ControlConfiguration>
+
+                                                <!-- 법인 -->
+                                             <smartFilterBar:ControlConfiguration key="company_code" index="2" label="법인" groupId="_BASIC" visibleInAdvancedArea="true">
+                                                    <smartFilterBar:customControl>
+                                                    <ComboBox id="corp_combo" items="{/OrgCompanyView}">
+                                                        <core:Item key="{company_code}" text="{company_name}"/>
+                                                    </ComboBox>
+                                                    </smartFilterBar:customControl>
+                                                </smartFilterBar:ControlConfiguration> 
+
+                                                 <!-- 사업본부 -->
+                                                <smartFilterBar:ControlConfiguration key="bizunit_code" index="3" label="사업본부" groupId="_BASIC" visibleInAdvancedArea="true">
+                                                    <smartFilterBar:customControl>
+                                                    	<MultiComboBox id="business_combo" items="{/OrgUnitView}">
+                                                            <core:Item key="{bizunit_code}" text="{bizunit_name}"/>
+                                                        </MultiComboBox>
+                                                    </smartFilterBar:customControl>
+                                                </smartFilterBar:ControlConfiguration> 
+
+                                     
+                                            </smartFilterBar:controlConfiguration>
+                                            <smartFilterBar:layoutData>
+                                                <FlexItemData shrinkFactor="0"/>
+                                            </smartFilterBar:layoutData>
+                                        </smartFilterBar:SmartFilterBar> 
+                                        
+
+
+
+
+
 # Sapui5 Samrt Table               
               <smartTable:SmartTable
                     height="100%"
