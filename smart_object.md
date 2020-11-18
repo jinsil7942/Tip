@@ -108,6 +108,7 @@
                     useVariantManagement="true"
                     useTablePersonalisation="true"
                     showTablePersonalisation="false"
+		    editTogglable="false" //true로 설정하면 컬럼을 수정하는 화면으로 전환됨
                     header="List"
                     showRowCount="true"
                     persistencyKey="SmartTableAnalytical_Explored"
