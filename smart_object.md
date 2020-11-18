@@ -1,3 +1,20 @@
+# SmartVariantManagement 
+                <!-- VariantManagement -->
+                <smartVariantManagement:SmartVariantManagement        
+				             id="pageVariantId" //아이디를 맞추어 주어야 한다. 
+				             persistencyKey="PageVariantPKey" />                
+
+                <!-- FilterBar -->
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" 
+                    entitySet="MIMaterialCodeList" 
+                    smartVariant="pageVariantId" //아이디를 맞추어 주어야 한다. 
+
+                 <!-- Smart Table -->
+                <smartTable:SmartTable
+                    height="100%"
+                    smartVariant="pageVariantId" //아이디를 맞추어 주어야 한다. 
+                    
+                    
 # Sapui5 Samrt Filter
                   <smartFilterBar:SmartFilterBar 
                   id="smartFilterBar" //스마트 테이블 smartFilterId 속성과 동일하게 맞추어준다. 
