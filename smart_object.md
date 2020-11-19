@@ -44,7 +44,12 @@
                   
 # Sapui5 Samrt customControl
 
-
+### 필터 기본값 등록 : customData:hasValue="true"
+                         
+			<ComboBox id="category_code" customData:hasValue="true" items="{/MICategoryView}">
+			<core:Item key="{category_code}" text="{category_code_text}"/>
+                                 
+			    
                           <!-- Smart Filter -->
                                       	<smartFilterBar:SmartFilterBar id="smartFilterBar" smartVariant="__SVM01" useToolbar="true" 
                                           entitySet="MonitoringMasterView_02" persistencyKey="UniqueAndStablePersistencyKey" enableBasicSearch="false">
