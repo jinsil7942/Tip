@@ -16,6 +16,9 @@
                     
                     
 # Sapui5 Samrt Filter
+
+		  key 와 아이디가 중복되지 않도로 네이밍을 주어야 한다. 
+
                   <smartFilterBar:SmartFilterBar 
                   id="smartFilterBar" //스마트 테이블 smartFilterId 속성과 동일하게 맞추어준다. 
                   entitySet="MIMaterialCodeList" //테이블과 동일한 entitySet  주어야 한다.`
