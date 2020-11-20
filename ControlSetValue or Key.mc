@@ -1,13 +1,33 @@
+## ComboBox 
 
-      oView.byId("comboBoxType").setSelectedKey(oModel.getProperty("/comboBoxType"));
+### xml
+            <ComboBox id="comboBoxType" items="{view>/ItemType}" enabled="{=${ui>/bEditMode}}">
+            <core:Item key="{view>key}" text="{view>text}"/>
+            <layoutData>
+            <l:GridData span="XL2 L4 M2 S12"/>
+            </layoutData>
+            </ComboBox>
+            
+### controller            
+            oView.byId("comboBoxType").setSelectedKey(oModel.getProperty("/comboBoxType"));
+            oView.byId("comboboxScenario").setSelectedKey(oModel.getProperty("/comboboxScenario"));
 
-      oView.byId("comboboxScenario").setSelectedKey(oModel.getProperty("/comboboxScenario"));
 
-      //Active 0 Active, 1 In Active
-      var oRadioSelectIndex = oModel.getProperty("/radioActive");
-      oRadioSelectIndex = parseInt(oRadioSelectIndex);
-      oView.byId("radioActive").setSelectedIndex(oRadioSelectIndex);
 
+## RadioButtonGroup
+            <RadioButtonGroup
+            id="radioActive"
+            columns="2"
+            width="100%"
+            enabled="{=${ui>/bEditMode}}">
+            <RadioButton text="Active"/>
+            <RadioButton text="In Active"/>
+            </RadioButtonGroup>
+                                                        
+            //Active 0 Active, 1 In Active
+            var oRadioSelectIndex = oModel.getProperty("/radioActive");
+            oRadioSelectIndex = parseInt(oRadioSelectIndex);
+            oView.byId("radioActive").setSelectedIndex(oRadioSelectIndex);
 
       oView.byId("comboBoxRawMaterials").setSelectedKey(oModel.getProperty("/comboBoxRawMaterials"));
 
