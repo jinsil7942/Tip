@@ -1,0 +1,38 @@
+
+      oView.byId("comboBoxType").setSelectedKey(oModel.getProperty("/comboBoxType"));
+
+      oView.byId("comboboxScenario").setSelectedKey(oModel.getProperty("/comboboxScenario"));
+
+      //Active 0 Active, 1 In Active
+      var oRadioSelectIndex = oModel.getProperty("/radioActive");
+      oRadioSelectIndex = parseInt(oRadioSelectIndex);
+      oView.byId("radioActive").setSelectedIndex(oRadioSelectIndex);
+
+
+      oView.byId("comboBoxRawMaterials").setSelectedKey(oModel.getProperty("/comboBoxRawMaterials"));
+
+
+      oView.byId("comboboxOffice").setSelectedKey(oModel.getProperty("/comboboxOffice"));
+
+ 
+      oView.byId("conboBoxNatioinStatus").setSelectedKey(oModel.getProperty("/conboBoxNatioinStatus"));
+
+ 
+      ///richTextEditor : setValue getValue setEditable setEditorType setRequired setTextDirection setValue
+      oView.byId("reMonitoringPurpose").setHeight("150px");
+
+      //remo.setTextDirection("setTextDirection");//oModel.getProperty("/reMonitoringPurpose")
+      oView.byId("reMonitoringPurpose").setValue(this._richTextEditor());
+    
+      oView.byId("reMonitoringPurposeDetail").setValue(oModel.getProperty("/reMonitoringPurposeDetail"));
+ 
+      //checkbox getSelected() getText() setSelected() editable
+
+      oView.byId("checkBoxOMType1").setSelected(oModel.getProperty("/checkBoxOMType1"));
+      oView.byId("checkBoxOMType2").setSelected(oModel.getProperty("/checkBoxOMType2"));
+      oView.byId("checkBoxOMType3").setSelected(oModel.getProperty("/checkBoxOMType3"));
+
+
+      oView.byId("reSourceSystem").setValue(oModel.getProperty("/reSourceSystem"));
+
+      oView.byId("reSourceSystemDetail").setValue(oModel.getProperty("/reSourceSystemDetail"));
