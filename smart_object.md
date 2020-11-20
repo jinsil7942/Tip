@@ -159,7 +159,32 @@
                     </smartTable:customToolbar>
                 </smartTable:SmartTable>
 		
-		
+## hidden column - 히든 컬럼 가져가기 
+
+	<Column hAlign="Center"  demandPopin="false" minScreenWidth="" visible="true">
+	<customData>
+	<core:CustomData key="p13nData"
+	value='\{"columnKey": "tenant_id", "leadingProperty": "tenant_id", "sortProperty": "tenant_id", "filterProperty": "tenant_id", "columnIndex": 1}'/>
+	</customData>
+	    <Text text="tenant_id"></Text>
+	</Column>
+	....
+	....
+	
+	onMainTableItemPress: function(oEvent) {
+	var oNextUIState = this.getOwnerComponent().getHelper().getNextUIState(1),
+		sPath = oEvent.getSource().getBindingContext().getPath(),
+		oRecord = this.getModel().getProperty(sPath);
+
+                        
+		this.getRouter().navTo("midPage", {
+		tenant_id: oRecord.tenant_id,
+                company_code: oRecord.company_code,
+                org_type_code: oRecord.org_type_code,
+                org_code: oRecord.org_code,
+                mi_material_code: oRecord.mi_material_code
+            });
+					
 
 ## beforeRebindTable[스마트필터 커스텀과 연동]
                 
