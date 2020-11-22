@@ -47,8 +47,38 @@
 			this.getRouter().navTo("object", {
 				objectId : oItem.getBindingContext().getProperty("SalesOrderID")
 			}, bReplace);
+			
 		},
-    
+		
+## Detail.controller.js  ====================================================== 
+
+	    _showDetail : function (oItem) {
+			sPath = oEvent.getSource().getBindingContext().getPath(),
+			oRecord = this.getModel().getProperty(sPath);
+
+			var aParameters = sPath.substring( sPath.indexOf('(')+1, sPath.length );		
+			aParameters = aParameters.split(",");
+
+			var size = aParameters.length;
+			var key, value;
+			for(var i=0 ; i < size ; i++) {
+				key = aParameters[i].split("=")[0];
+				value = aParameters[i].split("=")[1];			 
+				aParameters[key] = value;
+			}
+
+			this.getRouter().navTo("midPage", {
+				layout: oNextUIState.layout, 
+				tenant_id: aParameters["tenant_id"].value,
+				company_code: aParameters["company_code"].value,
+				org_type_code: aParameters["org_type_code"].value,
+				org_code : aParameters["org_code"].value,
+				mi_material_code: aParameters["mi_material_code"].value,
+				use_flag: oRecord.uaParameters["use_flag"].value
+				//{layout}/{tenant_id}/{company_code}/{org_type_code}/{org_code}/{mi_material_code}/{use_flag}",
+			};
+		    }
+		);  
 ### Detail.controller.js  ====================================================== 
 
 		onInit: function() {
