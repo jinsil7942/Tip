@@ -74,7 +74,7 @@
 				org_type_code: aParameters["org_type_code"].value,
 				org_code : aParameters["org_code"].value,
 				mi_material_code: aParameters["mi_material_code"].value,
-				use_flag: oRecord.uaParameters["use_flag"].value
+				use_flag: aParameters["use_flag"].value
 				//{layout}/{tenant_id}/{company_code}/{org_type_code}/{org_code}/{mi_material_code}/{use_flag}",
 			};
 		    }
