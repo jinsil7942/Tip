@@ -49,7 +49,7 @@
 			}, bReplace);
 		},
     
-### Detail.view.xml ====================================================== 
+### Detail.controller.js  ====================================================== 
 
 		onInit: function() {
 			UIComponent.getRouterFor(this).getRoute("Detail").attachPatternMatched(this._onDetailMatched, this);
@@ -72,3 +72,22 @@
 				this._bindView("/" + sObjectPath);
 			}.bind(this));
 		},
+		
+		
+			var oNextUIState = this.getOwnerComponent().getHelper().getNextUIState(1),
+			sPath = oEvent.getSource().getBindingContext().getPath(),
+			oRecord = this.getModel().getProperty(sPath);
+
+
+### Detail.controller.js 
+
+			this.getRouter().navTo("midPage", {
+			layout: oNextUIState.layout, 
+			tenant_id: oRecord.tenant_id,
+			company_code: oRecord.company_code,
+			org_type_code: oRecord.org_type_code,
+			org_code : oRecord.org_code,
+			mi_material_code: oRecord.mi_material_code,
+			use_flag: oRecord.use_flag
+			//{layout}/{tenant_id}/{company_code}/{org_type_code}/{org_code}/{mi_material_code}/{use_flag}",
+			});
