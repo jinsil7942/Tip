@@ -175,11 +175,8 @@
       * master
         remotes/origin/master
         remotes/origin/txt
-      $ git push origin :txt
-      $ git branch
-  * master
-    remotes/origin/master
-  $ git branch -d origin/txt -r   # 혹은 이렇게
+
+## user: sppCap $ git branch -d origin/mi -r
 
 
 ## git log
