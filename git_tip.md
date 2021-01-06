@@ -201,6 +201,28 @@
   git commit --amend //git 저장 메시지를 다시 정한다. 
 
 
+git stash pop
+
+그럼 다시 원래 있던 브런치로 수정된 파일들이 돌아온다~ ㅎㅎ
+
+ 
+## STASH 
+
+    git stash list : 백업한 리스트
+    git stash clear : 백업 리스트 지우기
+    git stash apply : 최근 stack 영역에 저장되어 있던 작업 내용 복원(stash list 해보면 리스트가 남아있음)
+    git stash pop : stack 영역에 저장되어 있던 작업 내용 복원되고, list에서 삭제됨
+    git stash pop stash@{1} : stash list 명령어를 이용하여 출력된 리스트에서 선택적 복원 
+    git stash drop stash@{1} : stash list 명령어를 이용하여 출력된 리스트에서 선택적 삭제 
+
+    git stash show : 무슨 파일이 수정됐는지 나옴
+    git stash show stash@{1} : 선택적으로 수정된 내용 나옴
+    git stash show  -p : diff 한것처럼 어떤 내용이 수정됐는지 나옴
+
+    git stash brach new-branch : 새로운 브런치를 만듬
+    git stash branch new-branch stahs@{1} : 새로운 브런치를 만듬
+
+
 ### Request Full 마스터에 병합하거나 개인적인 작업이후 진행 
 
   - git pull requst 사용법 확인해야함
